@@ -2,17 +2,26 @@ package jm.task.core.jdbc.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    public Connection getConnection() {
-        try (Connection connection = DriverManager.getConnection("127.0.0.1", "test_user", "password")) {
-            return connection;
-        } catch (SQLException ignored) {
+    final static String URL = "jdbc:mysql://localhost:3306/test_table";
+    final static String USER = "test_user";
+    final static String PASSWORD = "password";
 
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("OK!");
         }
-        return null;
+         catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return connection;
 
     }
 }
