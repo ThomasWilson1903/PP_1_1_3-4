@@ -28,11 +28,9 @@ public class UserDaoJDBCImpl implements UserDao {
             throw new RuntimeException(e);
         }
         String tableNameToCheck = "test_table";
-
-        // Получение информации о таблице
         try {
             ResultSet tables = metaData.getTables(null, null, tableNameToCheck, null);
-            if (tables.next()) {
+            if (!tables.next()) {
                 try {
                     Statement statement = connection.createStatement();
                     statement.execute(sql);
@@ -54,7 +52,6 @@ public class UserDaoJDBCImpl implements UserDao {
             Statement statement = connection.createStatement();
             statement.execute(sql);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -65,7 +62,6 @@ public class UserDaoJDBCImpl implements UserDao {
             Statement statement = connection.createStatement();
             statement.execute(sql);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -77,7 +73,6 @@ public class UserDaoJDBCImpl implements UserDao {
             Statement statement = connection.createStatement();
             statement.execute(sql);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -96,7 +91,6 @@ public class UserDaoJDBCImpl implements UserDao {
                 ));
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
         return users;
     }
@@ -109,7 +103,6 @@ public class UserDaoJDBCImpl implements UserDao {
             Statement statement = connection.createStatement();
             statement.execute(sql);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 }
