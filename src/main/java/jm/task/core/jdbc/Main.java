@@ -2,18 +2,13 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
-
-import java.sql.Connection;
-import java.util.List;
 
 
 public class Main {
 
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        Connection s = new Util().getConnection();
+
         UserDao userDao = new UserDaoJDBCImpl();
 
         userDao.createUsersTable();
@@ -23,13 +18,6 @@ public class Main {
         userDao.saveUser("Name4", "LastName4", (byte) 38);
         userDao.removeUserById(1);
 
-        //userDao.cleanUsersTable();
-        List<User> list = userDao.getAllUsers();
-        for (User user : list) {
-            user.toString();
-        }
-        //userDao.dropUsersTable();
-        /*userDao.getAllUsers();
-         */
+
     }
 }
