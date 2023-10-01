@@ -15,8 +15,8 @@ import java.util.Properties;
 public class Util {
     // реализуйте настройку соеденения с БД
     final static String URL = "jdbc:mysql://localhost:3306/test_table";
-    private static String userСheck = "test_user";
-    private static String password = "password";
+    private static String USERNAME = "root";
+    private static String PASSWORD = "Wolf_maestro";
     private static String driver = "com.mysql.cj.jdbc.Driver";
     private static SessionFactory sessionFactory = null;
 
@@ -25,7 +25,7 @@ public class Util {
         Connection connection = null;
         try {
             Class.forName(driver);
-            connection = DriverManager.getConnection(URL, userСheck, password);
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("ОК");
         } catch (ClassNotFoundException e) {
             System.out.println("ErrorDriver");
@@ -48,8 +48,8 @@ public class Util {
                 Properties settings = new Properties();
                 settings.put(AvailableSettings.DRIVER, driver);
                 settings.put(AvailableSettings.URL, URL);
-                settings.put(AvailableSettings.USER, userСheck);
-                settings.put(AvailableSettings.PASS, password);
+                settings.put(AvailableSettings.USER, USERNAME);
+                settings.put(AvailableSettings.PASS, PASSWORD);
                 settings.put(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
                 settings.put(AvailableSettings.SHOW_SQL, "true");
