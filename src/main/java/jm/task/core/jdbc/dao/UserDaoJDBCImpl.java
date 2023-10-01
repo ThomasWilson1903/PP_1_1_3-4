@@ -61,7 +61,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
-        String sql = String.format("INSERT INTO `test_table`.`Users` (`Name`, `NameLast`, `Age`) VALUES ('%s', '%s', '%d');", name, lastName, age);
+        String sql = String.format("INSERT INTO Users (`Name`, `NameLast`, `Age`) VALUES ('%s', '%s', '%d');", name, lastName, age);
         Connection connection = Util.getConnection();
         try {
             Statement statement = connection.createStatement();
@@ -72,7 +72,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     @Override
     public void removeUserById(long id) {
-        String sql = String.format("DELETE FROM `test_table`.`Users` WHERE (`idUsers` = '%d');", id);
+        String sql = String.format("DELETE FROM Users WHERE (`idUsers` = '%d');", id);
         Connection connection = Util.getConnection();
 
         try {
