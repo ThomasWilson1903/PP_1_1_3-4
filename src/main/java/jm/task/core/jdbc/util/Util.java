@@ -16,7 +16,7 @@ public class Util {
     // реализуйте настройку соеденения с БД
     final static String URL = "jdbc:mysql://localhost:3306/test_table";
     private static String USERNAME = "root";
-    private static String PASSWORD = "Wolf_maestro";
+    private static String PASSWORD = "root";
     private static String driver = "com.mysql.cj.jdbc.Driver";
     private static SessionFactory sessionFactory = null;
 
