@@ -18,12 +18,13 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
     private static SessionFactory sessionFactory = null;
+    private static String driver = "com.mysql.cj.jdbc.Driver";
 
 
     public static Connection getConnection() {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driver);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("ОК");
         } catch (ClassNotFoundException e) {
