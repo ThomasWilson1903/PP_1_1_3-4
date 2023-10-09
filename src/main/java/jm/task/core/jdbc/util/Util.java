@@ -29,9 +29,11 @@ public class Util {
             System.out.println("ОК");
         } catch (ClassNotFoundException e) {
             System.out.println("ErrorDriver");
+            e.printStackTrace();
         } catch (SQLException e) {
             System.out.println("ErrorSQL");
             System.out.println(e.getErrorCode());
+            e.printStackTrace();
         }
 
         return connection;

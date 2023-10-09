@@ -26,6 +26,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             metaData = connection.getMetaData();
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         String tableNameToCheck = "test_table";
         try {
@@ -34,9 +35,11 @@ public class UserDaoJDBCImpl implements UserDao {
                 try(Statement statement = connection.createStatement();) {
                     statement.execute(sql);
                 } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         } catch (SQLException e) {
+            e.printStackTrace();
         }
 
 
@@ -51,6 +54,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement();) {
             statement.execute(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -61,6 +65,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement();) {
             statement.execute(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -72,6 +77,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement();) {
             statement.execute(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -90,6 +96,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 ));
             }
         } catch (SQLException e) {
+            e.printStackTrace();
         }
         return users;
     }
@@ -102,6 +109,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement();) {
             statement.execute(sql);
         } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
