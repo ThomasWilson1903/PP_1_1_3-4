@@ -16,7 +16,7 @@ public class Util {
     // реализуйте настройку соеденения с БД
     private static final String URL = "jdbc:mysql://localhost:3306/test_table";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "roottoor";
     private static SessionFactory sessionFactory = null;
     private static String driver = "com.mysql.cj.jdbc.Driver";
 
@@ -29,11 +29,9 @@ public class Util {
             System.out.println("ОК");
         } catch (ClassNotFoundException e) {
             System.out.println("ErrorDriver");
-            throw new RuntimeException(e);
         } catch (SQLException e) {
             System.out.println("ErrorSQL");
             System.out.println(e.getErrorCode());
-            throw new RuntimeException(e);
         }
 
         return connection;

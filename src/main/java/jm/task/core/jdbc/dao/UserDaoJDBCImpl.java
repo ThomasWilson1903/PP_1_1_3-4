@@ -26,7 +26,6 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             metaData = connection.getMetaData();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
         String tableNameToCheck = "test_table";
         try {
@@ -36,11 +35,9 @@ public class UserDaoJDBCImpl implements UserDao {
                     Statement statement = connection.createStatement();
                     statement.execute(sql);
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
                 }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
 
